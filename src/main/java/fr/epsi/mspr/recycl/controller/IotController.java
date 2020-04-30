@@ -13,8 +13,9 @@ public class IotController {
     ArrayList<String> test = new ArrayList<>();
 
     @PostMapping("/greeting")
-    public void greeting(@RequestBody String body) {
+    public String greeting(@RequestBody String body) {
         System.out.println(body);
+        return body;
     }
 
 }
