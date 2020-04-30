@@ -23,9 +23,6 @@ public class IotController {
     int compteur = 0;
 
     @Autowired
-    private PoubelleRepository poubelleRepository;
-
-    @Autowired
     private PoubelleService poubelleService;
 
     @PostMapping("/greeting")
