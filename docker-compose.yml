@@ -30,8 +30,8 @@ services:
       - "8585:8080"
     depends_on:
       - db_container_recycl
-      networks:
-        - backend
+    networks:
+      - backend
     restart: always
 
   networks:
