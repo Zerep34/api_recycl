@@ -33,7 +33,7 @@ public class IotController {
             e.printStackTrace();
         }
         try {
-            FileWriter myWriter = new FileWriter("filename.txt");
+            FileWriter myWriter = new FileWriter("log.txt");
             myWriter.write(text+";");
             myWriter.close();
             System.out.println("Successfully wrote to the file.");
