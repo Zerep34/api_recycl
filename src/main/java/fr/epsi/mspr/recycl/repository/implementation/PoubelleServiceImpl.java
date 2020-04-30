@@ -14,8 +14,6 @@ public class PoubelleServiceImpl implements PoubelleService {
 
     private PoubelleRepository poubelleRepository;
 
-
-
     @Autowired
     public PoubelleServiceImpl(PoubelleRepository poubelleRepository) {
         this.poubelleRepository = poubelleRepository;

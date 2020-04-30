@@ -3,7 +3,6 @@ package fr.epsi.mspr.recycl.controller;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 import fr.epsi.mspr.recycl.model.PoubelleReleve;
-import fr.epsi.mspr.recycl.repository.PoubelleRepository;
 import fr.epsi.mspr.recycl.repository.service.PoubelleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -16,7 +15,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-@Controller
+@RestController
 public class IotController {
 
 
