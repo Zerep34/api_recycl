@@ -13,7 +13,7 @@ public class IotController {
     ArrayList<String> test = new ArrayList<>();
 
     @PostMapping("/greeting")
-    public String greeting(@RequestBody String body) {
+    public @ResponseBody  String greeting(@RequestBody String body) {
         System.out.println(body);
         return body;
     }
