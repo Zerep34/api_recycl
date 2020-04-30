@@ -34,8 +34,8 @@ services:
       - backend
     restart: always
 
-  networks:
-    backend:
-      driver: bridge
+networks:
+  backend:
+    driver: bridge
 
 
