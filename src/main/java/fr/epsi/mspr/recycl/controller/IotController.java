@@ -13,7 +13,6 @@ public class IotController {
     ArrayList<String> test = new ArrayList<>();
 
     @PostMapping("/greeting")
-    @ResponseStatus(HttpStatus.OK)
     public void greeting(@RequestBody String body) {
         System.out.println(body);
     }
