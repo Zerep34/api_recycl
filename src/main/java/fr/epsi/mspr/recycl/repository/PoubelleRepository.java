@@ -17,6 +17,6 @@ public interface PoubelleRepository extends CrudRepository<PoubelleReleve, Integ
     void deleteByName(String name);
 
     @Modifying
-    @Query("Update PoubelleReleve Set name=?1, date=?2, FillLevel=?3 Where name=?5")
+    @Query("Update PoubelleReleve Set name=?1, date=?2, FillLevel=?3 Where name=?4")
     void update(String name, Date date, int FillLevel, String oldName);
 }
