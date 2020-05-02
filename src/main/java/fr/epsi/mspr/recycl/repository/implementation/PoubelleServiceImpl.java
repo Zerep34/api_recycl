@@ -39,9 +39,6 @@ public class PoubelleServiceImpl implements PoubelleService {
 
     @Override
     public PoubelleReleve save(PoubelleReleve poubelle) throws Exception {
-        if(poubelleRepository.findByName(poubelle.getName()) != null){
-            throw new Exception("User already exists");
-        }
         this.poubelleRepository.save(poubelle);
         return poubelle;
     }
