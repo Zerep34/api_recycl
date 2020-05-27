@@ -25,18 +25,19 @@ public class UserController {
         try{
             V_EMPLOYE e_login = V_EMPLOYEService.findByLogin(login);
             if(e_login != null){
-                V_EMPLOYE e_pass = V_EMPLOYEService.findByLoginWithPass(login, password);
-                if(!e_pass.isBlocked()){
+                if(!e_login.isBlocked()){
                     Date ajd = new Date();
-                    long diff = e_pass.getDate_mdp().getTime() - ajd.getTime();
+                    long diff = e_login.getDate_mdp().getTime() - ajd.getTime();
                     float res = Math.abs(diff / (1000*60*60*24));
                     System.out.println(res);
                     if(res < 60){
-                        return e_pass.getLogin();
+                        return e_login.getLogin();
                     }
                     this.employeService.updateBlocked(login);
                     return "compte bloque";
-                }return "compte bloque";
+                }
+                V_EMPLOYE e_pass = V_EMPLOYEService.findByLoginWithPass(login, password);
+                return e_pass.getLogin();
             }
             return "false";
         }catch (Exception e){

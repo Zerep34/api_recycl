@@ -7,7 +7,7 @@ definer_user=root
 definer_host=%
 suid=1
 with_check_option=0
-timestamp=2020-05-27 12:53:42
+timestamp=2020-05-27 13:32:07
 create-version=1
 source=select `d`.`nodemande` AS `nodemande`,`d`.`date` AS `date`,`dechet`.`tournee` AS `tournee`,`e`.`nom` AS `nom`,`typ`.`type` AS `type`,`dechet`.`quantite` AS `quantite` from (((`DEMANDE` `d` join `ENTREPRISE` `e` on((`e`.`siret` = `d`.`siret`))) join `DECHET_DEMANDE` `dechet` on((`d`.`nodemande` = `dechet`.`nodemande`))) join `TYPE_DECHET` `typ` on((`typ`.`id` = `dechet`.`type_dechet`)))
 client_cs_name=utf8
