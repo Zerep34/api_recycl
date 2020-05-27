@@ -1,5 +1,7 @@
 package fr.epsi.mspr.recycl.model;
 
+import com.mysql.cj.x.protobuf.MysqlxDatatypes;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -20,7 +22,7 @@ public class Poubelle {
     private int type_dechet_id ;
 
     @NotNull
-    private String nom ;
+    private MysqlxDatatypes.Scalar.String nom ;
 
     public Poubelle() {
     }
