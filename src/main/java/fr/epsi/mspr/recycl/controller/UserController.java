@@ -37,6 +37,7 @@ public class UserController {
                     this.employeService.updateBlocked(login);
                     return "compte bloque";
                 }
+                return "compte bloque";
             }
             return "false";
         }catch (Exception e){
