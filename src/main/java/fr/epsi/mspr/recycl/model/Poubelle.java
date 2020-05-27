@@ -22,7 +22,7 @@ public class Poubelle {
     private int type_dechet_id ;
 
     @NotNull
-    private MysqlxDatatypes.Scalar.String nom ;
+    private String nom ;
 
     public Poubelle() {
     }

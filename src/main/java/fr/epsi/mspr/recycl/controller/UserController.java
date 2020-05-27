@@ -1,11 +1,13 @@
 package fr.epsi.mspr.recycl.controller;
 
-import fr.epsi.mspr.recycl.model.Employe_View;
+import fr.epsi.mspr.recycl.model.V_EMPLOYE;
 import fr.epsi.mspr.recycl.repository.service.EmployeService;
-import fr.epsi.mspr.recycl.repository.service.Employe_ViewService;
+import fr.epsi.mspr.recycl.repository.service.V_EMPLOYEService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.util.Date;
 
@@ -13,25 +15,26 @@ import java.util.Date;
 public class UserController {
 
     @Autowired
-    private Employe_ViewService employe_viewService;
+    private V_EMPLOYEService V_EMPLOYEService;
 
     @Autowired
     private EmployeService employeService;
 
     @PostMapping("/user")
     public @ResponseBody String getUser(@RequestParam String login, @RequestParam String password) throws Exception {
-        Employe_View e = employe_viewService.findByLogin(login, password);
+        V_EMPLOYE e = V_EMPLOYEService.findByLogin(login, password);
         if(e != null){
             if(!e.isBlocked()){
                 Date ajd = new Date();
                 long diff = e.getDate_mdp().getTime() - ajd.getTime();
-                float res = (diff / (1000*60*60*24));
+                float res = Math.abs(diff / (1000*60*60*24));
+                System.out.println(res);
                 if(res < 60){
-                    return e.toString();
+                    return e.getLogin();
                 }
                 this.employeService.updateBlocked(login);
-                return "compte boqué";
-            }return "false";
+                return "compte bloqué";
+            }return "compte bloqué";
 
         }
         return "false";
