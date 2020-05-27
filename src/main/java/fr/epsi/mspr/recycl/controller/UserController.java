@@ -34,8 +34,8 @@ public class UserController {
                         return e.getLogin();
                     }
                     this.employeService.updateBlocked(login);
-                    return "compte bloqué";
-                }return "compte bloqué";
+                    return "compte bloque";
+                }return "compte bloque";
             }
             return "false";
         }catch (Exception e){
