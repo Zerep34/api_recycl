@@ -1,6 +1,6 @@
 package fr.epsi.mspr.recycl.repository;
 
-import fr.epsi.mspr.recycl.model.V_EMPLOYE;
+import fr.epsi.mspr.recycl.model.view.V_EMPLOYE;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 

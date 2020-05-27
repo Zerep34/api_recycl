@@ -1,4 +1,4 @@
-package fr.epsi.mspr.recycl.model;
+package fr.epsi.mspr.recycl.model.view;
 
 import lombok.Getter;
 import lombok.Setter;

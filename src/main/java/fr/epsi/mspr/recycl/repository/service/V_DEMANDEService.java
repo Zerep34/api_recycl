@@ -4,7 +4,6 @@ import fr.epsi.mspr.recycl.model.view.V_EMPLOYE;
 import org.springframework.stereotype.Service;
 
 @Service
-public interface V_EMPLOYEService {
+public interface V_DEMANDEService {
 
-    V_EMPLOYE findByLogin(String login, String pass) throws Exception;
 }
