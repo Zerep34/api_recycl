@@ -23,15 +23,16 @@ public class UserController {
     @PostMapping("/user")
     public @ResponseBody String getUser(@RequestParam String login, @RequestParam String password) throws Exception {
         try{
-            V_EMPLOYE e = V_EMPLOYEService.findByLogin(login, password);
-            if(e != null){
-                if(!e.isBlocked()){
+            V_EMPLOYE e_login = V_EMPLOYEService.findByLogin(login);
+            if(e_login != null){
+                V_EMPLOYE e_pass = V_EMPLOYEService.findByLoginWithPass(login, password);
+                if(!e_pass.isBlocked()){
                     Date ajd = new Date();
-                    long diff = e.getDate_mdp().getTime() - ajd.getTime();
+                    long diff = e_pass.getDate_mdp().getTime() - ajd.getTime();
                     float res = Math.abs(diff / (1000*60*60*24));
                     System.out.println(res);
                     if(res < 60){
-                        return e.getLogin();
+                        return e_pass.getLogin();
                     }
                     this.employeService.updateBlocked(login);
                     return "compte bloque";
@@ -39,9 +40,29 @@ public class UserController {
             }
             return "false";
         }catch (Exception e){
-            return "false";
+            if(e.getMessage().equals("No User Found")){
+                return "user";
+            }
+            else if(e.getMessage().equals("No Pass Found")){
+                return "pass";
+            }
+            return "other";
         }
-
     }
 
+    @PostMapping("/block_account")
+    public @ResponseBody String block(@RequestParam String login) throws Exception {
+        try{
+            V_EMPLOYE e = V_EMPLOYEService.findByLogin(login);
+            if(e != null){
+                employeService.updateBlocked(login);
+                return "done";
+            }
+            else{
+                return "false";
+            }
+        }catch (Exception e){
+            return "false";
+        }
+    }
 }

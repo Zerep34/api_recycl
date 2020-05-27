@@ -10,4 +10,5 @@ public interface EmployeService {
     @Transactional
     @Modifying
     void updateBlocked(String login) throws Exception;
+
 }

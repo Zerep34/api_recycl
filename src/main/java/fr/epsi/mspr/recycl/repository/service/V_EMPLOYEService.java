@@ -6,5 +6,7 @@ import org.springframework.stereotype.Service;
 @Service
 public interface V_EMPLOYEService {
 
-    V_EMPLOYE findByLogin(String login, String pass) throws Exception;
+    V_EMPLOYE findByLoginWithPass(String login, String pass) throws Exception;
+
+    V_EMPLOYE findByLogin(String login) throws Exception;
 }

@@ -16,11 +16,19 @@ public class V_EMPLOYEImpl implements V_EMPLOYEService {
         this.V_EMPLOYERepository = V_EMPLOYERepository;
     }
 
-    public V_EMPLOYE findByLogin(String login, String pass) throws Exception {
-        V_EMPLOYE p = V_EMPLOYERepository.findByLogin(login, pass);
+    public V_EMPLOYE findByLogin(String login) throws Exception {
+        V_EMPLOYE p = V_EMPLOYERepository.findByLogin(login);
         if(p != null){
             return p;
         }
-        throw new Exception("Not Found");
+        throw new Exception("No User Found");
+    }
+
+    public V_EMPLOYE findByLoginWithPass(String login, String pass) throws Exception {
+        V_EMPLOYE p = V_EMPLOYERepository.findByLoginWithPass(login, pass);
+        if(p != null){
+            return p;
+        }
+        throw new Exception("No Pass Found");
     }
 }

@@ -6,6 +6,9 @@ import org.springframework.data.repository.CrudRepository;
 
 public interface V_EMPLOYERepository extends CrudRepository<V_EMPLOYE, Integer> {
 
+    @Query("SELECT p from V_EMPLOYE p Where p.login=?1")
+    V_EMPLOYE findByLogin(String name);
+
     @Query("SELECT p from V_EMPLOYE p Where p.login=?1 and p.motdepasse=?2")
-    V_EMPLOYE findByLogin(String name, String pass);
+    V_EMPLOYE findByLoginWithPass(String name, String pass);
 }
