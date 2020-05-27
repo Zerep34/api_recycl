@@ -7,7 +7,7 @@ definer_user=root
 definer_host=%
 suid=1
 with_check_option=0
-timestamp=2020-05-27 13:32:06
+timestamp=2020-05-27 16:20:42
 create-version=1
 source=select month(`t`.`date_heure`) AS `mois`,year(`t`.`date_heure`) AS `year`,`td`.`type` AS `type`,count(`d`.`quantite`) AS `quantite` from ((`TOURNEE` `t` join `DECHET_DEMANDE` `d` on((`d`.`tournee` = `t`.`id`))) join `TYPE_DECHET` `td` on((`td`.`id` = `d`.`type_dechet`))) group by month(`t`.`date_heure`),year(`t`.`date_heure`),`d`.`type_dechet`
 client_cs_name=utf8

@@ -2,9 +2,7 @@ package fr.epsi.mspr.recycl.controller;
 
 import com.google.gson.Gson;
 import fr.epsi.mspr.recycl.model.view.V_DECHET_MOIS;
-import fr.epsi.mspr.recycl.model.view.V_DEMANDE;
 import fr.epsi.mspr.recycl.repository.V_DECHET_MOISRepository;
-import fr.epsi.mspr.recycl.repository.V_DEMANDERepository;
 import org.assertj.core.util.Lists;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;

@@ -1,8 +1,12 @@
 package fr.epsi.mspr.recycl.controller;
 
+import com.google.gson.Gson;
+import fr.epsi.mspr.recycl.model.EMPLOYE;
 import fr.epsi.mspr.recycl.model.view.V_EMPLOYE;
+import fr.epsi.mspr.recycl.repository.EmployeRepository;
 import fr.epsi.mspr.recycl.repository.service.EmployeService;
 import fr.epsi.mspr.recycl.repository.service.V_EMPLOYEService;
+import org.assertj.core.util.Lists;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -10,6 +14,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.Date;
+import java.util.List;
 
 @RestController
 public class UserController {
@@ -19,6 +24,9 @@ public class UserController {
 
     @Autowired
     private EmployeService employeService;
+
+    @Autowired
+    EmployeRepository employeRepository;
 
     @PostMapping("/user")
     public @ResponseBody String getUser(@RequestParam String login, @RequestParam String password) throws Exception {
@@ -65,5 +73,12 @@ public class UserController {
         }catch (Exception e){
             return "false";
         }
+    }
+
+    @PostMapping("/less_tournee")
+    public @ResponseBody String less_tournee(@RequestParam int nb){
+        Iterable<EMPLOYE> myIterator = employeRepository.emp_tournee(nb);
+        List<EMPLOYE> myList = Lists.newArrayList(myIterator);
+        return new Gson().toJson(myList);
     }
 }
