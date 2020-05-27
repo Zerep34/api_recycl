@@ -7,4 +7,5 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class V_DECHET_MOISImpl implements V_DECHET_MOISService{
+
 }

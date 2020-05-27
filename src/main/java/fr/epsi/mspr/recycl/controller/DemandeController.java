@@ -11,6 +11,7 @@ import org.assertj.core.util.Lists;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.Iterator;
@@ -24,8 +25,9 @@ public class DemandeController {
     private V_DEMANDERepository demandeRepo;
 
     @GetMapping("/demande")
-    public @ResponseBody String getUser() throws Exception {
-        Iterable<V_DEMANDE> myIterator = demandeRepo.findAll();
+    public @ResponseBody String getUser(@RequestParam String date) throws Exception {
+        Date d = new SimpleDateFormat("yyyy-MM-dd").parse(date);
+        Iterable<V_DEMANDE> myIterator = demandeRepo.findTournee(d);
         List<V_DEMANDE> myList = Lists.newArrayList(myIterator);
         return new Gson().toJson(myList);
     }

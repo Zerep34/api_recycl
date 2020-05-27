@@ -31,13 +31,12 @@ public class UserController {
                     float res = Math.abs(diff / (1000*60*60*24));
                     System.out.println(res);
                     if(res < 60){
+                        V_EMPLOYE e_pass = V_EMPLOYEService.findByLoginWithPass(login, password);
                         return e_login.getLogin();
                     }
                     this.employeService.updateBlocked(login);
                     return "compte bloque";
                 }
-                V_EMPLOYE e_pass = V_EMPLOYEService.findByLoginWithPass(login, password);
-                return e_pass.getLogin();
             }
             return "false";
         }catch (Exception e){
