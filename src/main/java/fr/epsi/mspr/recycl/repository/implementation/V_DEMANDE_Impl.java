@@ -20,8 +20,8 @@ public class V_DEMANDE_Impl implements V_DEMANDE_Service {
         this.v_demandeRepository = v_demandeRepository;
     }
 
-    public List<V_DEMANDE> findTournee(Date date) throws Exception {
-        Iterable<V_DEMANDE> list = v_demandeRepository.findTournee(date);
+    public List<V_DEMANDE> findDetail(int num) throws Exception {
+        Iterable<V_DEMANDE> list = v_demandeRepository.findDetail(num);
         List<V_DEMANDE> myList = Lists.newArrayList(list);
         if(!myList.isEmpty()){
             return myList;

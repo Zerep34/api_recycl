@@ -9,6 +9,6 @@ import java.util.Date;
 
 public interface V_DEMANDE_Repository extends CrudRepository<V_DEMANDE, Integer> {
 
-    @Query("select d from V_DEMANDE d WHERE d.date < ?1")
-    Iterable<V_DEMANDE> findTournee(Date date);
+    @Query("select d from V_DEMANDE d WHERE d.nodemande = ?1")
+    Iterable<V_DEMANDE> findDetail(int num);
 }

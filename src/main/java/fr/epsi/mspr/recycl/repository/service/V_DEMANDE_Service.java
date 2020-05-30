@@ -9,5 +9,5 @@ import java.util.Date;
 @Service
 public interface V_DEMANDE_Service {
 
-    Iterable<V_DEMANDE> findTournee(Date date) throws Exception;
+    Iterable<V_DEMANDE> findDetail(int num) throws Exception;
 }

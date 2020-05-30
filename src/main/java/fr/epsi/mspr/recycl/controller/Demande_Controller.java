@@ -18,10 +18,9 @@ public class Demande_Controller {
     @Autowired
     private V_DEMANDE_Repository demandeRepo;
 
-    @PostMapping("/demande")
-    public @ResponseBody String getDemande(@RequestParam String date) throws Exception {
-        Date d = new SimpleDateFormat("yyyy-MM-dd").parse(date);
-        Iterable<V_DEMANDE> myIterator = demandeRepo.findTournee(d);
+    @PostMapping("/demande_detail")
+    public @ResponseBody String getDemande(@RequestParam int num) throws Exception {
+        Iterable<V_DEMANDE> myIterator = demandeRepo.findDetail(num);
         List<V_DEMANDE> myList = Lists.newArrayList(myIterator);
         return new Gson().toJson(myList);
     }
