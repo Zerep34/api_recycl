@@ -2,7 +2,7 @@ package fr.epsi.mspr.recycl.controller;
 
 import com.google.gson.Gson;
 import fr.epsi.mspr.recycl.model.view.V_DECHET_MOIS;
-import fr.epsi.mspr.recycl.repository.V_DECHET_MOISRepository;
+import fr.epsi.mspr.recycl.repository.V_DECHET_MOIS_Repository;
 import org.assertj.core.util.Lists;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -15,7 +15,7 @@ import java.util.List;
 public class Dechet_Mois_Controller {
 
     @Autowired
-    private V_DECHET_MOISRepository dechetMoisRepository;
+    private V_DECHET_MOIS_Repository dechetMoisRepository;
 
     @GetMapping("/dechet_mois")
     public @ResponseBody String getDechet_month() throws Exception {

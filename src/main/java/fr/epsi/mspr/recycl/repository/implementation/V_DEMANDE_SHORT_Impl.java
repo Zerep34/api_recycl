@@ -1,10 +1,7 @@
 package fr.epsi.mspr.recycl.repository.implementation;
 
-import fr.epsi.mspr.recycl.model.view.V_DEMANDE;
 import fr.epsi.mspr.recycl.model.view.V_DEMANDE_SHORT;
-import fr.epsi.mspr.recycl.repository.V_DEMANDERepository;
 import fr.epsi.mspr.recycl.repository.V_DEMANDE_SHORT_Repository;
-import fr.epsi.mspr.recycl.repository.service.V_DEMANDEService;
 import fr.epsi.mspr.recycl.repository.service.V_DEMANDE_SHORT_Service;
 import org.assertj.core.util.Lists;
 import org.springframework.beans.factory.annotation.Autowired;

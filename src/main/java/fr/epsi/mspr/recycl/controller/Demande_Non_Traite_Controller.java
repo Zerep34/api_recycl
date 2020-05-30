@@ -2,7 +2,7 @@ package fr.epsi.mspr.recycl.controller;
 
 import com.google.gson.Gson;
 import fr.epsi.mspr.recycl.model.view.V_DEMANDE_NON_TRAITEE;
-import fr.epsi.mspr.recycl.repository.V_DEMANDE_NON_TRAITEERepository;
+import fr.epsi.mspr.recycl.repository.V_DEMANDE_NON_TRAITEE_Repository;
 import org.assertj.core.util.Lists;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -17,7 +17,7 @@ public class Demande_Non_Traite_Controller {
 
 
     @Autowired
-    private V_DEMANDE_NON_TRAITEERepository demande_non_traiteeRepository;
+    private V_DEMANDE_NON_TRAITEE_Repository demande_non_traiteeRepository;
 
     @GetMapping("/demande_non_traite")
     public @ResponseBody String getUser(@RequestParam String date) throws Exception {

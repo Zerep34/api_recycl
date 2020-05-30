@@ -2,7 +2,7 @@ package fr.epsi.mspr.recycl.controller;
 
 import com.google.gson.Gson;
 import fr.epsi.mspr.recycl.model.view.V_TOURNEE_EMPLOYE;
-import fr.epsi.mspr.recycl.repository.V_TOURNEE_EMPLOYERepository;
+import fr.epsi.mspr.recycl.repository.V_TOURNEE_EMPLOYE_Repository;
 import org.assertj.core.util.Lists;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -17,7 +17,7 @@ public class Tournee_Employe_Controller {
 
 
     @Autowired
-    private V_TOURNEE_EMPLOYERepository v_tournee_employeRepository;
+    private V_TOURNEE_EMPLOYE_Repository v_tournee_employeRepository;
 
     @GetMapping("/tournee_employe")
     public @ResponseBody String getTourneeEmploye(@RequestParam String login) throws Exception {
