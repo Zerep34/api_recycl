@@ -1,23 +1,23 @@
 package fr.epsi.mspr.recycl.model.view;
 
 import fr.epsi.mspr.recycl.model.view.composekey.ComposeKey;
+import fr.epsi.mspr.recycl.model.view.composekey.ComposeKey_Diagramme;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.IdClass;
+import java.util.Date;
 
 @Entity
-@IdClass(ComposeKey.class)
-public class V_DECHET_MOIS {
+@IdClass(ComposeKey_Diagramme.class)
+public class V_DIAGRAMME_ADD {
 
     @Id
-    private int mois;
+    private float total;
 
     @Id
-    private int year;
+    private Date jour;
 
     @Id
-    private String type;
-
-    private int quantite;
+    private String name;
 }

@@ -1,4 +1,4 @@
-package fr.epsi.mspr.recycl.model.view;
+package fr.epsi.mspr.recycl.model.view.composekey;
 
 import java.io.Serializable;
 
