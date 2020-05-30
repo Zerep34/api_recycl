@@ -2,7 +2,9 @@
 
 sudo docker-compose stop
 
-sudo rm -rf sql
+git pull
+
+git checkout $1
 
 sudo mvn clean
 

@@ -20,7 +20,7 @@ public class Demande_Non_Traite_Controller {
     private V_DEMANDE_NON_TRAITEE_Repository demande_non_traiteeRepository;
 
     @GetMapping("/demande_non_traite")
-    public @ResponseBody String getUser(@RequestParam String date) throws Exception {
+    public @ResponseBody String getDemandeNonTraite() throws Exception {
         Iterable<V_DEMANDE_NON_TRAITEE> myIterator = demande_non_traiteeRepository.findAll();
         List<V_DEMANDE_NON_TRAITEE> myList = Lists.newArrayList(myIterator);
         return new Gson().toJson(myList);
