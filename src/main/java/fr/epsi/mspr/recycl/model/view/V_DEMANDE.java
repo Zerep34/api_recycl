@@ -20,6 +20,8 @@ public class V_DEMANDE {
 
     private int quantite;
 
+    private String devise;
+
     public int getNodemande() {
         return nodemande;
     }
