@@ -19,8 +19,8 @@ public class Demande_Controller {
     private V_DEMANDE_Repository demandeRepo;
 
     @PostMapping("/demande_detail")
-    public @ResponseBody String getDemande(@RequestParam int num) throws Exception {
-        Iterable<V_DEMANDE> myIterator = demandeRepo.findDetail(num);
+    public @ResponseBody String getDemande(@RequestParam String num) throws Exception {
+        Iterable<V_DEMANDE> myIterator = demandeRepo.findDetail(Integer.parseInt(num));
         List<V_DEMANDE> myList = Lists.newArrayList(myIterator);
         return new Gson().toJson(myList);
     }
