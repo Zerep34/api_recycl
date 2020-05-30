@@ -19,7 +19,7 @@ public class Diagramme_add_Controller {
     @Autowired
     private V_DIAGRAMME_ADD_Repository diagramme_add_repository;
 
-    @GetMapping("/diagramme_mois")
+    @GetMapping("/diagramme_add")
     public @ResponseBody String getDechet_month() throws Exception {
         Iterable<V_DIAGRAMME_ADD> myIterator = diagramme_add_repository.findAll();
         List<V_DIAGRAMME_ADD> myList = Lists.newArrayList(myIterator);
