@@ -1,5 +1,7 @@
 #! /bin/bash
 
+sudo docker-compose stop
+
 sudo rm -rf sql
 
 sudo mvn clean
