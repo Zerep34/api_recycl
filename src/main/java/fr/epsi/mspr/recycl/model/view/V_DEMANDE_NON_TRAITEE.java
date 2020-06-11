@@ -14,9 +14,9 @@ public class V_DEMANDE_NON_TRAITEE {
 
     private String type;
 
-    private int prix_forfait;
+    private String prix_forfait;
 
-    private int prix_lot;
+    private String prix_lot;
 
     private int nodemande;
 
