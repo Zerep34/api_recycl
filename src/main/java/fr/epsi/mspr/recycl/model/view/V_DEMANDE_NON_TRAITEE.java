@@ -26,7 +26,7 @@ public class V_DEMANDE_NON_TRAITEE {
 
     private int tournee;
 
-    public V_DEMANDE_NON_TRAITEE(String nom, Date date, String type, int prix_forfait, int prix_lot, int nodemande, int quantite, String devise, int tournee) {
+    public V_DEMANDE_NON_TRAITEE(String nom, Date date, String type, String prix_forfait, String prix_lot, int nodemande, int quantite, String devise, int tournee) {
         this.nom = nom;
         this.date = date;
         this.type = type;
@@ -53,11 +53,11 @@ public class V_DEMANDE_NON_TRAITEE {
         return type;
     }
 
-    public int getPrix_forfait() {
+    public String getPrix_forfait() {
         return prix_forfait;
     }
 
-    public int getPrix_lot() {
+    public String getPrix_lot() {
         return prix_lot;
     }
 
