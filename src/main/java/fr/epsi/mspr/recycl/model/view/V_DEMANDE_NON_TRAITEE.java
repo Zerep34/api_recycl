@@ -20,17 +20,20 @@ public class V_DEMANDE_NON_TRAITEE {
 
     private int nodemande;
 
+    private int quantite;
+
     private String devise;
 
     private int tournee;
 
-    public V_DEMANDE_NON_TRAITEE(String nom, Date date, String type, int prix_forfait, int prix_lot, int nodemande, String devise, int tournee) {
+    public V_DEMANDE_NON_TRAITEE(String nom, Date date, String type, int prix_forfait, int prix_lot, int nodemande, int quantite, String devise, int tournee) {
         this.nom = nom;
         this.date = date;
         this.type = type;
         this.prix_forfait = prix_forfait;
         this.prix_lot = prix_lot;
         this.nodemande = nodemande;
+        this.quantite = quantite;
         this.devise = devise;
         this.tournee = tournee;
     }
