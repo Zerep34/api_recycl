@@ -74,11 +74,4 @@ public class User_Controller {
             return "false";
         }
     }
-
-    @PostMapping("/less_tournee")
-    public @ResponseBody String less_tournee(@RequestParam int nb){
-        Iterable<EMPLOYE> myIterator = employeRepository.emp_tournee(nb);
-        List<EMPLOYE> myList = Lists.newArrayList(myIterator);
-        return new Gson().toJson(myList);
-    }
 }
