@@ -11,6 +11,6 @@ import java.util.Date;
 
 public interface V_DEMANDE_NON_TRAITEE_Repository extends CrudRepository<V_DEMANDE_NON_TRAITEE, Integer> {
 
-    @Query(value = "{call inscriptionDemande(:id)}", nativeQuery = true)
+    @Query(value = "SELECT inscriptionDemande(:id)", nativeQuery = true)
     String inscriptionDemande(@Param("id") int id);
 }
