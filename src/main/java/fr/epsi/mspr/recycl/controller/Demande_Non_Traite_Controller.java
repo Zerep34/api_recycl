@@ -26,4 +26,10 @@ public class Demande_Non_Traite_Controller {
         return new Gson().toJson(myList);
     }
 
+    @GetMapping("/add_demande_non_traite")
+    public @ResponseBody String getAddDemandeNonTraite(@RequestParam int id){
+        String result = demande_non_traiteeRepository.inscriptionDemande(id);
+        return result;
+    }
+
 }
