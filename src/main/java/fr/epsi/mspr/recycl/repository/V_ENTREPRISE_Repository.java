@@ -9,6 +9,6 @@ import org.springframework.data.repository.query.Param;
 
 public interface V_ENTREPRISE_Repository extends CrudRepository<ENTREPRISE, Integer> {
 
-    @Query(value = "{call plus_demande(:name)}", nativeQuery = true)
-    Iterable<ENTREPRISE> plus_demande(@Param("name") String entr);
+    @Query(value = "{call plus_demande(:id)}", nativeQuery = true)
+    Iterable<ENTREPRISE> plus_demande(@Param("id") int entr);
 }
