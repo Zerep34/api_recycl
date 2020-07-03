@@ -14,7 +14,7 @@ import java.util.Date;
 import java.util.List;
 
 @RestController
-public class Demande_Controller {
+public class DemandeController {
 
 
     @Autowired

@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-public class Demande_Non_Traite_Controller {
+public class DemandeNonTraiteController {
 
 
     @Autowired

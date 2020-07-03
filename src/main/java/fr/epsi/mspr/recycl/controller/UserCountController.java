@@ -19,7 +19,7 @@ import java.util.Date;
 import java.util.List;
 
 @RestController
-public class User_Count_Controller {
+public class UserCountController {
 
     @Autowired
     V_EMPLOYE_COUNT_Repository employe_count_repository;

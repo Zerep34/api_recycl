@@ -14,7 +14,7 @@ import java.util.Date;
 import java.util.List;
 
 @RestController
-public class Quantite_Type_Date_Controller {
+public class QuantiteTypeDateController {
 
     @Autowired
     private V_PROCEDURE_QUANTITE_DECHET_DATE_Repository procedure_quantite_dechet_date_repository;

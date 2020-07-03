@@ -12,7 +12,7 @@ import java.util.Date;
 import java.util.List;
 
 @RestController
-public class Demande_short_Controller {
+public class DemandeShortController {
 
     @Autowired
     private V_DEMANDE_SHORT_Repository demande_short_repository;

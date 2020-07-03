@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-public class Diagramme_add_Controller {
+public class DiagrammeAddController {
 
     @Autowired
     private V_DIAGRAMME_ADD_Repository diagramme_add_repository;

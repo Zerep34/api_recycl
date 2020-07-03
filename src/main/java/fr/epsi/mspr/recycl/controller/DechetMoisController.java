@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-public class Dechet_Mois_Controller {
+public class DechetMoisController {
 
     @Autowired
     private V_DECHET_MOIS_Repository dechetMoisRepository;

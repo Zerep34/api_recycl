@@ -17,7 +17,7 @@ import java.util.Date;
 import java.util.List;
 
 @RestController
-public class User_Controller {
+public class UserController {
 
     @Autowired
     private V_EMPLOYE_Service V_EMPLOYE_Service;

@@ -18,7 +18,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 @RestController
-public class Iot_Controller {
+public class IotController {
 
     int compteur = 0;
 
