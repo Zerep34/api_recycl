@@ -34,7 +34,7 @@ public class EMPLOYE {
     private int ville;
 
     @NotNull
-    private String fonction;
+    private int fonction;
 
     @NotNull
     private String motdepasse;
@@ -47,6 +47,22 @@ public class EMPLOYE {
 
     @NotNull
     private Date date_mdp;
+
+    public EMPLOYE() {}
+
+    public EMPLOYE(@NotNull String nom, @NotNull String prenom, @NotNull Date date_naissance, @NotNull String adresse, @NotNull int antenne, @NotNull int ville, @NotNull int fonction, @NotNull String motdepasse, @NotNull boolean blocked, @NotNull String login, @NotNull Date date_mdp) {
+        this.nom = nom;
+        this.prenom = prenom;
+        this.date_naissance = date_naissance;
+        this.adresse = adresse;
+        this.antenne = antenne;
+        this.ville = ville;
+        this.fonction = fonction;
+        this.motdepasse = motdepasse;
+        this.blocked = blocked;
+        this.login = login;
+        this.date_mdp = date_mdp;
+    }
 
     public long getNoemp() {
         return noemp;
@@ -104,11 +120,11 @@ public class EMPLOYE {
         this.ville = ville;
     }
 
-    public String getFonction() {
+    public int getFonction() {
         return fonction;
     }
 
-    public void setFonction(String fonction) {
+    public void setFonction(int fonction) {
         this.fonction = fonction;
     }
 

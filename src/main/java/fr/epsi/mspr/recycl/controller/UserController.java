@@ -13,6 +13,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 
@@ -73,5 +75,31 @@ public class UserController {
         }catch (Exception e){
             return "false";
         }
+    }
+
+    @PostMapping("/add_user")
+    public @ResponseBody String addUser(@RequestParam String nom,
+                                        @RequestParam String prenom,
+                                        @RequestParam String date_naissance,
+                                        @RequestParam String adresse,
+                                        @RequestParam int antenne,
+                                        @RequestParam int ville,
+                                        @RequestParam int fonction,
+                                        @RequestParam String motdepasse,
+                                        @RequestParam int blocked,
+                                        @RequestParam String login,
+                                        @RequestParam String date_mdp) throws ParseException {
+        Date dateNaissance = new SimpleDateFormat("yyyy-MM-dd").parse(date_naissance);
+        Date dateMdp = new SimpleDateFormat("yyyy-MM-dd").parse(date_mdp);
+        boolean tempBlocked;
+        if(blocked == 1){
+            tempBlocked = true;
+        }
+        else{
+            tempBlocked = false;
+        }
+        EMPLOYE employe = new EMPLOYE(nom, prenom, dateNaissance, adresse, antenne, ville, fonction, motdepasse, tempBlocked, login, dateMdp);
+        employeRepository.save(employe);
+        return "saved";
     }
 }
