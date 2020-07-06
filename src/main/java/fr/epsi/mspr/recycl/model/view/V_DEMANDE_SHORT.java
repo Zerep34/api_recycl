@@ -14,7 +14,7 @@ public class V_DEMANDE_SHORT {
 
     private Date date;
 
-    public V_DEMANDE_SHORT(){
+    public V_DEMANDE_SHORT() {
     }
 
     public V_DEMANDE_SHORT(int nodemande, String nom, Date date) {

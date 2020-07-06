@@ -1,6 +1,5 @@
 package fr.epsi.mspr.recycl.model.view;
 
-import fr.epsi.mspr.recycl.model.view.composekey.ComposeKey;
 import fr.epsi.mspr.recycl.model.view.composekey.ComposeKey_Diagramme;
 
 import javax.persistence.Entity;

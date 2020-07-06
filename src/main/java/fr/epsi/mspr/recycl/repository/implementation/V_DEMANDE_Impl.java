@@ -7,7 +7,6 @@ import org.assertj.core.util.Lists;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.Date;
 import java.util.List;
 
 @Service
@@ -16,17 +15,16 @@ public class V_DEMANDE_Impl implements V_DEMANDE_Service {
     private V_DEMANDE_Repository v_demandeRepository;
 
     @Autowired
-    public V_DEMANDE_Impl(V_DEMANDE_Repository v_demandeRepository){
+    public V_DEMANDE_Impl(V_DEMANDE_Repository v_demandeRepository) {
         this.v_demandeRepository = v_demandeRepository;
     }
 
     public List<V_DEMANDE> findDetail(int num) throws Exception {
         Iterable<V_DEMANDE> list = v_demandeRepository.findDetail(num);
         List<V_DEMANDE> myList = Lists.newArrayList(list);
-        if(!myList.isEmpty()){
+        if (!myList.isEmpty()) {
             return myList;
-        }
-        else{
+        } else {
             throw new Exception("aucune demande");
         }
     }

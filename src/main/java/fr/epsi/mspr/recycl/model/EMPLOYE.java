@@ -19,10 +19,10 @@ public class EMPLOYE {
     private String nom;
 
     @NotNull
-    private String prenom ;
+    private String prenom;
 
     @NotNull
-    private Date date_naissance ;
+    private Date date_naissance;
 
     @NotNull
     private String adresse;
@@ -48,7 +48,8 @@ public class EMPLOYE {
     @NotNull
     private Date date_mdp;
 
-    public EMPLOYE() {}
+    public EMPLOYE() {
+    }
 
     public EMPLOYE(@NotNull String nom, @NotNull String prenom, @NotNull Date date_naissance, @NotNull String adresse, @NotNull int antenne, @NotNull int ville, @NotNull int fonction, @NotNull String motdepasse, @NotNull boolean blocked, @NotNull String login, @NotNull Date date_mdp) {
         this.nom = nom;

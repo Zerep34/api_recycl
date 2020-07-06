@@ -1,7 +1,6 @@
 package fr.epsi.mspr.recycl.model.view.composekey;
 
 import java.io.Serializable;
-import java.util.Date;
 
 public class ComposeKey_quantite_dechet_date implements Serializable {
 

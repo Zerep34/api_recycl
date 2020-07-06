@@ -2,9 +2,7 @@ package fr.epsi.mspr.recycl.controller;
 
 import com.google.gson.Gson;
 import fr.epsi.mspr.recycl.model.view.V_POUBELLE;
-import fr.epsi.mspr.recycl.model.view.V_VILLE;
 import fr.epsi.mspr.recycl.repository.V_POUBELLE_Repository;
-import fr.epsi.mspr.recycl.repository.V_VILLE_Repository;
 import org.assertj.core.util.Lists;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -20,7 +18,8 @@ public class PoubelleController {
     private V_POUBELLE_Repository v_poubelle_repository;
 
     @GetMapping("/poubelles")
-    public @ResponseBody String getAllAntenne() throws Exception {
+    public @ResponseBody
+    String getAllAntenne() throws Exception {
         Iterable<V_POUBELLE> myIterator = v_poubelle_repository.findAll();
         List<V_POUBELLE> myList = Lists.newArrayList(myIterator);
         return new Gson().toJson(myList);

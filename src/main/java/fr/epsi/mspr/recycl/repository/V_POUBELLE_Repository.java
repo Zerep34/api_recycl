@@ -1,6 +1,5 @@
 package fr.epsi.mspr.recycl.repository;
 
-import fr.epsi.mspr.recycl.model.view.V_FONCTION;
 import fr.epsi.mspr.recycl.model.view.V_POUBELLE;
 import org.springframework.data.repository.CrudRepository;
 

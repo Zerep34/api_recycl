@@ -21,7 +21,7 @@ public class POUBELLE_SERVICE_Impl implements POUBELLE_Service {
 
     public PoubelleReleve findByName(String name) throws Exception {
         PoubelleReleve p = poubelleRepository.findByName(name);
-        if(p != null){
+        if (p != null) {
             return p;
         }
         throw new Exception("Not Found");
@@ -33,7 +33,7 @@ public class POUBELLE_SERVICE_Impl implements POUBELLE_Service {
     }
 
     @Transactional
-    public void update(String name, Date date, int FillLevel, String oldName){
+    public void update(String name, Date date, int FillLevel, String oldName) {
         this.poubelleRepository.update(name, date, FillLevel, oldName);
     }
 
@@ -44,6 +44,8 @@ public class POUBELLE_SERVICE_Impl implements POUBELLE_Service {
     }
 
     @Override
-    public Iterable<PoubelleReleve> findAll(){return this.poubelleRepository.findAll();}
+    public Iterable<PoubelleReleve> findAll() {
+        return this.poubelleRepository.findAll();
+    }
 
 }

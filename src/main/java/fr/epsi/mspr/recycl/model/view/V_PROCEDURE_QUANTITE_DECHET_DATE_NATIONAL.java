@@ -1,6 +1,5 @@
 package fr.epsi.mspr.recycl.model.view;
 
-import fr.epsi.mspr.recycl.model.view.composekey.ComposeKey_quantite_dechet_date;
 import fr.epsi.mspr.recycl.model.view.composekey.ComposeKey_type_count;
 
 import javax.persistence.Entity;

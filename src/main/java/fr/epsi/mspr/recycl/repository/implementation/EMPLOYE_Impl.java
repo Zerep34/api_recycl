@@ -19,7 +19,7 @@ public class EMPLOYE_Impl implements EMPLOYE_Service {
 
     @Transactional
     @Modifying
-    public void updateBlocked(String login){
+    public void updateBlocked(String login) {
         this.employeRepository.updateBlocked(login);
     }
 }

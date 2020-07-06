@@ -19,10 +19,10 @@ public class V_EMPLOYE_COUNT {
     private String nom;
 
     @NotNull
-    private String prenom ;
+    private String prenom;
 
     @NotNull
-    private Date date_naissance ;
+    private Date date_naissance;
 
     @NotNull
     private String adresse;

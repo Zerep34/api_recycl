@@ -16,17 +16,16 @@ public class V_DEMANDE_SHORT_Impl implements V_DEMANDE_SHORT_Service {
     private V_DEMANDE_SHORT_Repository v_demande_shortRepository;
 
     @Autowired
-    public V_DEMANDE_SHORT_Impl(V_DEMANDE_SHORT_Repository v_demande_shortRepository){
+    public V_DEMANDE_SHORT_Impl(V_DEMANDE_SHORT_Repository v_demande_shortRepository) {
         this.v_demande_shortRepository = v_demande_shortRepository;
     }
 
     public List<V_DEMANDE_SHORT> findDemande(Date date) throws Exception {
         Iterable<V_DEMANDE_SHORT> list = v_demande_shortRepository.findDemande(date);
         List<V_DEMANDE_SHORT> myList = Lists.newArrayList(list);
-        if(!myList.isEmpty()){
+        if (!myList.isEmpty()) {
             return myList;
-        }
-        else{
+        } else {
             throw new Exception("aucune demande");
         }
     }

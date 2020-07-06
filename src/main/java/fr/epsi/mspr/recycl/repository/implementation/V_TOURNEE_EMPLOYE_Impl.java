@@ -22,10 +22,9 @@ public class V_TOURNEE_EMPLOYE_Impl implements V_TOURNEEEMPLOYE_Service {
     public List<V_TOURNEE_EMPLOYE> findTourneeByEmploye(String login) throws Exception {
         Iterable<V_TOURNEE_EMPLOYE> list = v_tournee_employeRepository.findTourneeByEmploye(login);
         List<V_TOURNEE_EMPLOYE> myList = Lists.newArrayList(list);
-        if(!myList.isEmpty()){
+        if (!myList.isEmpty()) {
             return myList;
-        }
-        else{
+        } else {
             throw new Exception("aucune tournee");
         }
     }

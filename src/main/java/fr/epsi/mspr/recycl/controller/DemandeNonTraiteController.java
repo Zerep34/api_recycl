@@ -20,14 +20,16 @@ public class DemandeNonTraiteController {
     private V_DEMANDE_NON_TRAITEE_Repository demande_non_traiteeRepository;
 
     @GetMapping("/demande_non_traite")
-    public @ResponseBody String getDemandeNonTraite() throws Exception {
+    public @ResponseBody
+    String getDemandeNonTraite() throws Exception {
         Iterable<V_DEMANDE_NON_TRAITEE> myIterator = demande_non_traiteeRepository.findAll();
         List<V_DEMANDE_NON_TRAITEE> myList = Lists.newArrayList(myIterator);
         return new Gson().toJson(myList);
     }
 
     @GetMapping("/add_demande_non_traite")
-    public @ResponseBody String getAddDemandeNonTraite(@RequestParam int id){
+    public @ResponseBody
+    String getAddDemandeNonTraite(@RequestParam int id) {
         String result = demande_non_traiteeRepository.inscriptionDemande(id);
         return result;
     }

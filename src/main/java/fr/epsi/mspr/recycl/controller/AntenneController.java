@@ -18,7 +18,8 @@ public class AntenneController {
     private V_ANTENNE_Repository v_antenne_repository;
 
     @GetMapping("/antenne")
-    public @ResponseBody String getAllAntenne() throws Exception {
+    public @ResponseBody
+    String getAllAntenne() throws Exception {
         Iterable<V_ANTENNE> myIterator = v_antenne_repository.findAll();
         List<V_ANTENNE> myList = Lists.newArrayList(myIterator);
         return new Gson().toJson(myList);

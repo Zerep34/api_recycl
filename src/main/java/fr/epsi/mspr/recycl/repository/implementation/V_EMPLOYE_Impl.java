@@ -18,7 +18,7 @@ public class V_EMPLOYE_Impl implements V_EMPLOYE_Service {
 
     public V_EMPLOYE findByLogin(String login) throws Exception {
         V_EMPLOYE p = V_EMPLOYE_Repository.findByLogin(login);
-        if(p != null){
+        if (p != null) {
             return p;
         }
         throw new Exception("No User Found");
@@ -26,7 +26,7 @@ public class V_EMPLOYE_Impl implements V_EMPLOYE_Service {
 
     public V_EMPLOYE findByLoginWithPass(String login, String pass) throws Exception {
         V_EMPLOYE p = V_EMPLOYE_Repository.findByLoginWithPass(login, pass);
-        if(p != null){
+        if (p != null) {
             return p;
         }
         throw new Exception("No Pass Found");

@@ -1,6 +1,5 @@
 package fr.epsi.mspr.recycl.repository;
 
-import fr.epsi.mspr.recycl.model.view.V_PROCEDURE_QUANTITE_DECHET_DATE;
 import fr.epsi.mspr.recycl.model.view.V_PROCEDURE_QUANTITE_DECHET_DATE_NATIONAL;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;

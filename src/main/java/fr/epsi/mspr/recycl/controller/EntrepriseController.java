@@ -22,14 +22,16 @@ public class EntrepriseController {
     private ENTREPRISE_Short_Repository entreprise_short_repository;
 
     @PostMapping("/entreprise")
-    public @ResponseBody String getEntreprise(@RequestParam int name) throws Exception {
+    public @ResponseBody
+    String getEntreprise(@RequestParam int name) throws Exception {
         Iterable<ENTREPRISE> myIterator = v_entrepriseRepository.plus_demande(name);
         List<ENTREPRISE> myList = Lists.newArrayList(myIterator);
         return new Gson().toJson(myList);
     }
 
     @GetMapping("/all_entreprise")
-    public @ResponseBody String getAllEntreprise(){
+    public @ResponseBody
+    String getAllEntreprise() {
         Iterable<ENTREPRISE_Short> liste_entreprise = entreprise_short_repository.getAllEntreprise();
         List<ENTREPRISE_Short> myList = Lists.newArrayList(liste_entreprise);
         return new Gson().toJson(myList);

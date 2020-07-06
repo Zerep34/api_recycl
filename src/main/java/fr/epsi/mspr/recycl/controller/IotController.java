@@ -26,17 +26,17 @@ public class IotController {
     private POUBELLE_Service POUBELLE_Service;
 
     @PostMapping("/iot_recycl")
-    public @ResponseBody String iot(@RequestBody String body) throws Exception {
-        System.out.println(body);
+    public @ResponseBody
+    String iot(@RequestBody String body) throws Exception {
         JsonObject jsonObject = new JsonParser().parse(body).getAsJsonObject();
         POUBELLE_Service.save(new PoubelleReleve(compteur, this.getNameFromJson(jsonObject),
-                                    this.getTimeStampFromJson(jsonObject), this.getValueFromJson(jsonObject)));
+                this.getTimeStampFromJson(jsonObject), this.getValueFromJson(jsonObject)));
         compteur++;
         write_to_a_file(body);
         return body;
     }
 
-    public void write_to_a_file(String text){
+    public void write_to_a_file(String text) {
         try {
             File myObj = new File("log.txt");
             if (myObj.createNewFile()) {
@@ -50,7 +50,7 @@ public class IotController {
         }
         try {
             FileWriter myWriter = new FileWriter("log.txt");
-            myWriter.write(text+";");
+            myWriter.write(text + ";");
             myWriter.close();
             System.out.println("Successfully wrote to the file.");
         } catch (IOException e) {
@@ -59,19 +59,19 @@ public class IotController {
         }
     }
 
-    public int getValueFromJson(JsonObject jsonObject){
+    public int getValueFromJson(JsonObject jsonObject) {
         return jsonObject.get("device").getAsJsonObject()
-                    .get("telemetry").getAsJsonObject()
-                        .get("Connected_Waste_Bin_7dd").getAsJsonObject()
-                            .get("FillLevel").getAsJsonObject()
-                                .get("value").getAsInt();
+                .get("telemetry").getAsJsonObject()
+                .get("Connected_Waste_Bin_7dd").getAsJsonObject()
+                .get("FillLevel").getAsJsonObject()
+                .get("value").getAsInt();
     }
 
     public Date getTimeStampFromJson(JsonObject jsonObject) throws ParseException {
         String temp_time = jsonObject.get("timestamp").getAsString();
         temp_time = temp_time.replace("T", " ");
         temp_time = temp_time.replace("Z", "");
-        temp_time = temp_time.substring(0, temp_time.length()-4);
+        temp_time = temp_time.substring(0, temp_time.length() - 4);
         SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         return formatter.parse(temp_time);
 

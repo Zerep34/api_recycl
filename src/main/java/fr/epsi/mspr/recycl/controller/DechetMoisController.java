@@ -18,7 +18,8 @@ public class DechetMoisController {
     private V_DECHET_MOIS_Repository dechetMoisRepository;
 
     @GetMapping("/dechet_mois")
-    public @ResponseBody String getDechet_month() throws Exception {
+    public @ResponseBody
+    String getDechet_month() throws Exception {
         Iterable<V_DECHET_MOIS> myIterator = dechetMoisRepository.findAll();
         List<V_DECHET_MOIS> myList = Lists.newArrayList(myIterator);
         return new Gson().toJson(myList);

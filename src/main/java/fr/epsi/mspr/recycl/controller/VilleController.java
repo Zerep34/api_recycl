@@ -1,9 +1,7 @@
 package fr.epsi.mspr.recycl.controller;
 
 import com.google.gson.Gson;
-import fr.epsi.mspr.recycl.model.view.V_ANTENNE;
 import fr.epsi.mspr.recycl.model.view.V_VILLE;
-import fr.epsi.mspr.recycl.repository.V_ANTENNE_Repository;
 import fr.epsi.mspr.recycl.repository.V_VILLE_Repository;
 import org.assertj.core.util.Lists;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,7 +18,8 @@ public class VilleController {
     private V_VILLE_Repository v_ville_repository;
 
     @GetMapping("/ville")
-    public @ResponseBody String getAllAntenne() throws Exception {
+    public @ResponseBody
+    String getAllAntenne() throws Exception {
         Iterable<V_VILLE> myIterator = v_ville_repository.findAll();
         List<V_VILLE> myList = Lists.newArrayList(myIterator);
         return new Gson().toJson(myList);

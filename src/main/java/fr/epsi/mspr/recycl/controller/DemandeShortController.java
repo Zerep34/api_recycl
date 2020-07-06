@@ -5,7 +5,10 @@ import fr.epsi.mspr.recycl.model.view.V_DEMANDE_SHORT;
 import fr.epsi.mspr.recycl.repository.V_DEMANDE_SHORT_Repository;
 import org.assertj.core.util.Lists;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -18,7 +21,8 @@ public class DemandeShortController {
     private V_DEMANDE_SHORT_Repository demande_short_repository;
 
     @PostMapping("/demande_short")
-    public @ResponseBody String getDemande(@RequestParam String date) throws Exception {
+    public @ResponseBody
+    String getDemande(@RequestParam String date) throws Exception {
         Date d = new SimpleDateFormat("yyyy-MM-dd").parse(date);
         Iterable<V_DEMANDE_SHORT> myIterator = demande_short_repository.findDemande(d);
         List<V_DEMANDE_SHORT> myList = Lists.newArrayList(myIterator);

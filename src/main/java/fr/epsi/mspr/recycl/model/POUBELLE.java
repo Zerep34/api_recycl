@@ -1,7 +1,5 @@
 package fr.epsi.mspr.recycl.model;
 
-import com.mysql.cj.x.protobuf.MysqlxDatatypes;
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -19,10 +17,10 @@ public class POUBELLE {
     private int SIRET;
 
     @NotNull
-    private int type_dechet_id ;
+    private int type_dechet_id;
 
     @NotNull
-    private String nom ;
+    private String nom;
 
     public POUBELLE() {
     }
